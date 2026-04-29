@@ -1,12 +1,33 @@
-# React + Vite
+# ECS 273 - Homework 3
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Author: Yan Liang (yyyliang@ucdavis.edu)
 
-Currently, two official plugins are available:
+## How to Run
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+cd Homework3/yyyliang
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+Open `http://localhost:5173/` in your browser.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+
+- **Stock Selector**: Dropdown menu listing 20 stocks (sorted A–Z)
+- **View 1 — OHLC Line Chart**: Open / High / Low / Close prices over the past 2 years, with horizontal zoom (mouse wheel) and pan (drag)
+- **View 2 — t-SNE Scatter Plot**: 2D projection of LSTM-autoencoder latent embeddings, colored by sector. Click a point to select that stock; hover shows ticker. Supports zoom and pan.
+- **View 3 — News List**: News articles for the selected stock, sorted by date. Click a headline to expand the full article.
+- **Bonus — Linked Views**: Selecting a stock in any view updates all other views.
+
+## Data
+
+- `data/stockdata/` — 20 CSV files of historical OHLCV data (from HW1)
+- `data/stocknews/` — News articles per stock (from HW1)
+- `data/tsne.csv` — Pre-computed t-SNE coordinates (from HW2)
+
+## Tech Stack
+
+- React (Vite + JavaScript)
+- D3.js for visualization
+- Tailwind CSS for styling
